@@ -111,13 +111,15 @@ const Trip = () => {
         ends_at: dayjs(selectedDates.endsAt.dateString).toISOString(),
       });
 
-      Alert.alert("Sucesso", "Viagem atualizada com sucesso", [{
-        text: "OK",
-        onPress: () => {
-          setShowModal(MODAL.NONE);
-          getTripDetails();
+      Alert.alert("Sucesso", "Viagem atualizada com sucesso", [
+        {
+          text: "OK",
+          onPress: () => {
+            setShowModal(MODAL.NONE);
+            getTripDetails();
+          },
         },
-      }]);
+      ]);
     } catch (error) {
       console.error(error);
     } finally {
@@ -144,9 +146,11 @@ const Trip = () => {
         </TouchableOpacity>
       </Input>
 
-      {options === "activity" ? (
+      {options === "activity" && tripDetails.id && (
         <Activities tripDetails={tripDetails} />
-      ) : (
+      )}
+
+      {options === "details" && tripDetails.id && (
         <Details tripId={tripDetails.id} />
       )}
 
