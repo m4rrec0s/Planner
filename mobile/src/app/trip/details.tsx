@@ -78,7 +78,7 @@ const Details = ({ tripId }: { tripId: string }) => {
 
   return (
     <View className="flex-1 mt-10">
-      <Text className="text-zinc-50 text-2xl font-semibold mb-2">
+      <Text className="text-zinc-50 text-2xl font-semibold mb-4">
         Links Importantes
       </Text>
 
@@ -103,7 +103,7 @@ const Details = ({ tripId }: { tripId: string }) => {
       </View>
 
       <View className="flex-1 border-t border-zinc-800 mt-6">
-        <Text className="text-zinc-50 text-2xl font-semibold my-6">
+        <Text className="text-zinc-50 text-2xl font-semibold mb-4">
           Convidados
         </Text>
 
